@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <script src="beluga.js"></script>
+
+    <style>
+        body {
+            background-color: #f9f9;
+        }
+        h1 {
+            text-align: center;
+            color:white;
+            margin-top: 50px;         
+        }
+     
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Form</h1>
+
+        <form action="#">
+
+            <textarea cols="50" rows="6" readonly>  
+                Contrato de serviços 
+            </textarea>
+        
+        <label>
+            <input type="checkbox" id="chk" checked> Li e aceito os termos  de uso.
+        </label><br>
+
+        <input type="submit" value="Aceitar" id="btn">
+    </form>
+        
+    </div>
+
+   <script>
+    (function(){
+        'use strict';
+
+        var $btn = document.getElementById('btn');
+        var $chk = document.getElementById('chk');
+        
+        toggleBtn();
+
+        $chk.addEventListener('change', function(){
+            
+            toggleBtn();
+        });
+
+        function toggleBtn() {
+            $btn.disabled = !$chk.checked;
+        }
+    })()
+   </script>
+
+</body>
+</html>

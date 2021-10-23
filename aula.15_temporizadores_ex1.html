@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .banner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 0 1000px rgba(0, 0, 0, .8);
+            display: none;
+        }
+        .banner_close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Temporizadores</h1>
+
+    <div class="banner">
+        <h2>Banner Irritante</h2>
+        <button class="banner__close">X</button>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi provident. Excepturi, odit, velit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi provident. Excepturi, odit, velit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi provident. Excepturi, odit, velit.</p>
+    </div>
+    
+
+    <script>
+        (function(){
+            
+              
+            var $banner = document.querySelector('.banner');
+            var $bannerBtn = document.querySelector('.banner__close');
+            
+            $bannerBtn.addEventListener('click', escondeBanner);
+            
+            var intervaloEsconde = null;
+            
+            function mostraBanner(){
+                $banner.style.display =  'block';
+                
+                intervaloEsconde = setTimeout(escondeBanner, 3000);
+            }
+            function escondeBanner(){
+                $bannerBtn.removeEventListener('click', escondeBanner)
+                $banner.parentNode.removeChild($banner);
+                
+                clearTimeout(intervaloEsconde);
+            }
+            
+            setTimeout(mostraBanner, 3000);
+                
+            
+        })()
+
+    </script>
+</body>
+</html>

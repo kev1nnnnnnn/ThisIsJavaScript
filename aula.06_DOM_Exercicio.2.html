@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <script src="beluga.js"></script>
+</head>
+<body>
+
+    <div>
+
+        <h1>Fera Hacker</h1>
+
+        <p>Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão.
+            Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora 
+            desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de espécimes.</p>
+        <p>Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão.
+            Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora 
+            desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de espécimes.</p>
+        <p>Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão.
+            Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora 
+            desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de espécimes.</p>
+
+        <p>Lorem Ipsum é simplesmente um texto fictício da indústria tipográfica e de impressão.
+            Lorem Ipsum é o texto fictício padrão do setor desde os anos 1500, quando uma impressora 
+            desconhecida pegou uma galera do tipo e a mexeu para fazer um livro de espécimes.</p>
+        
+        </div>
+
+
+    <script>
+       (function(){
+           'use strict';
+
+           var paragrafos = document.querySelectorAll('p');
+           var x = 0;
+
+           while(paragrafos[x]){
+               paragrafos[x].textContent = x + ' -Essa pagina for hackeada por John Kevin'
+               x++;
+           }
+       })();
+    </script>
+</body>
+</html>

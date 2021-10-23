@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+
+    <button onclick="calcular('+')">+</button>
+    <button onclick="calcular('-')">-</button>
+    <button onclick="calcular('*')">*</button>
+    <button onclick="calcular('/')">/</button>
+
+    <div id="output"></div>
+
+    <script>
+        console.log('Testando meu codigo');
+        var n1 = prompt('Digite um número: ');
+        n1 = parseInt (n1);
+
+        escreve();
+
+        function escreve() {
+            console.log('------------');
+            console.log(n1);
+        }
+
+        function calcular(simbolo) {
+            var n = prompt('Digite outro número: ');
+            n = parseInt(n);
+
+            switch(simbolo) {
+                case '+':
+                    n1 = n1 + n;
+                    break
+                case '-':
+                    n1 = n1 - n;
+                    break
+                case '*':
+                    n1 = n1 * n;
+                    break    
+                case '/': 
+                n1 = n1 / n;    
+            }
+            escreve();
+        }
+    </script>
+</body>
+</html>

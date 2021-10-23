@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+ 
+    <body>
+        <h1>JAVASCRIPT</h1>
+        
+        <input type="text" id="txtNome" value="digite"> <!--Ou disable-->
+
+        <script>
+            var $txt = document.querySelector('txtNome');
+            var nome = "John ";
+            var sobrenome = "Kevin";
+
+            document.querySelector('#txtNome').value = nome + sobrenome; //Setando um valor. também serve para recuperar o valor
+            document.querySelector('#txtNome').disabled = true;
+        </script>
+
+   </body>
+</html>
+
+
+<!--textContent = Inserir texto no DOM e reflete na visu da pag
+DOM = Document.query
+FUNCTION = LITERAL
+.innerHTML = Para interpretar a pagina html-->

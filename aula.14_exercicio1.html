@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>JavaScript Moderno</h1>
+
+
+    <script>
+      (function(){
+        var dataAtual =  new Date();
+        dataAtual.setHours(0);
+        dataAtual.setMinutes(0);
+        dataAtual.setSeconds(0);
+        dataAtual.setMilliseconds(0);
+        var anoAtual = dataAtual.getFullYear(); 
+       
+        var dataNiver = new Date(anoAtual, 07, 06)
+
+        var dataAtualTS = dataAtual.getTime();
+        var dataNiverTS = dataNiver.getTime();
+
+        if(dataNiverTS === dataAtualTS) {
+            alert('Feliz Aniversário!! :D');
+            return;
+        }
+
+
+        if(dataNiverTS < dataAtualTS) {
+            dataNiver.setFullYear(++anoAtual);
+            dataNiverTS = dataNiver.getTime();
+        }
+
+        const UM_DIA_TS = 24 * 60 * 60 * 1000;
+        
+        var diferenca = dataNiverTS - dataAtualTS;
+        console.log(diferenca / UM_DIA_TS);
+
+       
+
+      })()
+    </script>
+</body>
+</html>

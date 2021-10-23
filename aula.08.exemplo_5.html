@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <script src="beluga.js"></script>
+
+    <style>
+        body {
+            background-color: cadetblue;
+        }
+        h1 {
+            text-align: center;
+            color:white;
+            margin-top: 50px;         
+        }
+     
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Form</h1> 
+
+        <button>botão 1</button>
+        <button>botão 2</button>
+        <button>botão 3</button>
+    </div>
+
+   <script>
+       (function(){
+
+    var $btns = document.getElementsByTagName('button');
+
+    for (var i = 0; i <$btns.length; i++);
+        $btns[i].addEventListener('click', clicou);
+
+        function clicou(){
+            console.log(this.textContent);
+        }
+    })()
+   </script>
+
+</body>
+</html>

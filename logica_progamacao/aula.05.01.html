@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="iniciarCalculo('+')">+</button>
+    <button onclick="iniciarCalculo('-')">-</button>
+    <button onclick="iniciarCalculo('*')">*</button>
+    <button onclick="iniciarCalculo('/')">/</button>
+
+    <div id="output"></div>
+
+    <script>
+        var n2 = prompt('Digite o 1º número:');
+        n2 = parseFloat(n2);
+
+        escreve(n2);
+
+        function iniciarCalculo(simbolo){
+            var n1 = document.querySelector('#output').textContent;
+            n1 = parseFloat(n1);
+
+            var n2 = prompt('Digite outro número');
+            n2 = parseFloat(n2);
+
+            var msg = calcular(simbolo, n1, n2);
+            
+            escreve(msg);
+        }
+
+        function escreve(mensagem) {
+            var output = document.querySelector('#output');
+            output.innerHTML = mensagem;
+        }
+        try {
+            var msg = calcular(simbolo, n1,n2);
+        }catch(e) {
+                console.log(e);
+            }
+         
+        function calcular(simbolo, n1, n2) {
+            console.log(simbolo)
+mbolo
+            if(simbolo !== '+' && simbolo !== '-' && simbolo !== '*' && simbolo !== '/') {
+                throw new Error('Digite um simbolo valido')
+            }
+
+            if(isNaN(n1) || isNaN(n2)) {
+                throw new Error('Chama passando somente números.')
+            }
+            
+            var numeroCalculado = null;
+
+            switch(simbolo){
+                case '+':
+                    numeroCalculado = n1 + n2;
+                    break;
+                case '-':
+                    numeroCalculado = n1 - n2;
+                    break;
+                case '*':
+                    numeroCalculado = n1 * n2;
+                    break;
+                case '/':
+                    numeroCalculado = n1 / n2;
+            }
+            return numeroCalculado;      
+        }
+      
+    </script>
+</body>
+</html>

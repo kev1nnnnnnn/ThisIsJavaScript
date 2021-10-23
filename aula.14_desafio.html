@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+       
+        (function(){
+           
+            var data =  new Date();
+            data.setDate(2);
+            data.setMonth(2);
+        
+            
+            var mes = data.getMonth() + 1;
+            mes = mes < 10 ? '0' + mes : mes;
+
+            function formatDate(data) {
+                var dia = data.getDate() < 10 ? '0' + data.getDate() :
+                data.getDate();
+
+                var mes =  data.getMonth() + 1;
+                mes = mes < 10 ? '0' + mes : mes;
+
+                return dia + '/' + mes + '/' + data.getFullYear();
+            }
+          console.log(formatDate(data));
+        })()
+
+
+    </script>
+</head>
+<body>
+
+    <h1>JavaScript Moderno</h1>
+
+</body>
+</html>

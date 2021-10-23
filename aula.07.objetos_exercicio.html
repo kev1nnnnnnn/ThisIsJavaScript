@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <script src="beluga.js"></script>
+
+    <style>
+        body {
+            background-color: #f9f9;
+        }
+        h1 {
+            text-align: center;
+            color:white;
+            margin-top: 300px;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript</h1>
+
+    <script>
+       
+        var usuario1 = {
+            nome: 'john',
+            sobrenome: 'kevin costa'
+        };
+
+        var usuario2 = {
+            nome: 'Hugo',
+            sobrenome: 'Jorge Oliveira'
+        };
+        
+        var usuario3 = {
+            nome: 'Vivicka',
+            sobrenome: 'Menezes'
+        };
+
+        for (var i = 1; i <= 3; i++){
+            console.log(window["pessoa" + i].nome + ' ' +
+            window["pessoa" + i].sobrenome);
+        }
+
+    </script>
+</body>
+</html>

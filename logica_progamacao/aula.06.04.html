@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <div id="output"></div>
+
+    <script>
+        var produtos = [
+            {"nome": "caneta", "preco": 2},
+            {"nome": "lapis", "preco": 1.5},
+            {"nome": "borracha", "preco": 1}
+        ];
+        var msg = "";
+
+        for(var i = 0; i < produtos.length; i++) {
+            console.log(produtos[i].preco);
+
+            msg += "<h2>Produto:" + produtos[i].nome + " </h2>"
+            msg += "<p>Preco: R$ 2 </p>"
+        }
+
+        document.querySelector('#output').innerHTML = msg;
+    </script>
+</body>
+</html>

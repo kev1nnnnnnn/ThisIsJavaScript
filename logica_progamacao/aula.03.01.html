@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    
+    <script>
+        /*Maneira com o WHILE */
+        var numero = prompt("Digite o número: ");
+        numero = parseFloat(numero);
+        
+        var indice = 1
+
+        while(indice <= 1001) {
+            document.write(numero + " + " + indice + " = " + (numero + indice)
+            + "<br>")
+
+            indice = indice  + 1
+        }
+        document.write("Saiu do loop");
+
+        /*=============== Maneira com o WHILE DO============= */
+        var numero = prompt("Digite o número: ");
+        numero = parseFloat(numero); 
+        
+        var indice = 1001;
+
+        do {
+            document.write(numero + " + " + indice + " = " + (numero + indice)
+            + "<br>")
+
+            indice = indice  + 1
+        }   while(indice <= 1000)
+        document.write("Saiu do loop");
+
+        /*=============== Maneira com o FOR============= */
+        var numero = prompt("Digite o número: ");
+        numero = parseFloat(numero); 
+        
+        /*obs: i atribui o 1, enquanto 1000 for menor igual a 1 irá ser incrementado mais 1. */
+        for(var i = 1; i <= 1000; i++) {
+            document.write(numero + " + " + i + " = " + (numero * i)
+            + "<br>")
+
+            document.write("Saiu do loop");
+
+
+        }
+
+
+       
+        
+        
+    </script>
+</body>
+</html>

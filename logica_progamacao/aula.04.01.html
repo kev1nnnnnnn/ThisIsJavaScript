@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+
+    <button onclick="mostrarTabuada()">Criar Tabuada</button>
+    <button onclick="limparTabuada()">Limpar Tabuada</button>
+    
+    <div id="output">vaiiiii</div>
+    <script>
+        function mostrarTabuada(){
+            alert("Mostrar tabuada chamada");
+        }
+        mostrarTabuada()
+        var output = document.querySelector("#output");
+        
+        var mensagem = "";
+        for(var i = 0; i < 1001; i++){
+            mensagem += 'i: ' + i + "<br>";
+        }
+
+        output.innerHTML = "mensagem";
+    </script>
+</body>
+</html>

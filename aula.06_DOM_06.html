@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <script src="beluga.js"></script>
+</head>
+<body>
+   <div class="container">
+    <h1>JavaScript</h1>
+   </div>
+
+   <section class="container">
+
+    <h2>Média dos Alunos</h2>
+    <table class="table js-tabela">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Nota 1</th>
+                <th>Nota 2</th>
+                <th>Nota 3</th>
+                <th>Nota 4</th>
+                <th>media</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="aluno">
+                <td class="aluno-nome">
+                    John
+                </td>
+                <td class="aluno-n1">10</td>
+                <td class="aluno-n2">8.5</td>
+                <td class="aluno-n3">9</td>
+                <td class="aluno-n4">7.5</td>
+                <td class="aluno-m"></td>
+            </tr>
+
+            <tr class="aluno">
+                <td class="aluno-nome">
+                    Viviane
+                </td>
+                <td class="aluno-n1">5</td>
+                <td class="aluno-n2">8.5</td>
+                <td class="aluno-n3">6.5</td>
+                <td class="aluno-n4">7.5</td>
+                <td class="aluno-m"></td>
+            </tr>
+
+            <tr class="aluno">
+                <td class="aluno-nome">
+                    Hugo
+                </td>
+                <td class="aluno-n1">5</td>
+                <td class="aluno-n2">8.5</td>
+                <td class="aluno-n3">6.5</td>
+                <td class="aluno-n4">7.5</td>
+                <td class="aluno-m"></td>
+            </tr>
+
+            <tr class="aluno">
+                <td class="aluno-nome">
+                    Letícia
+                </td>
+                <td class="aluno-n1">5</td>
+                <td class="aluno-n2">8.5</td>
+                <td class="aluno-n3">6.5</td>
+                <td class="aluno-n4">7.5</td>
+                <td class="aluno-m"></td>
+            </tr>
+        </tbody>
+    </table>
+
+   </section>
+  
+   <script>
+       (function(){
+           var trs = document.querySelectorAll('.js-tabela tbody .aluno');
+
+           var x = 0;
+           while(trs[x]) {
+               var linhaAluno = trs[x];
+               console.log(linhaAluno);
+               
+               var n1, n2, n3, n4, media;
+
+               var tds = linhaAluno.querySelectorAll('td');
+               console.log(tds);
+
+               n1 = pegaNota(tds[1]);
+               n2 = pegaNota(tds[2]);
+               n3 = pegaNota(tds[3]);
+               n4 = pegaNota(tds[4]);
+
+               media = calcularMedia(n1, n2, n3, n4);
+
+               linhaAluno.querySelector('.aluno-m').textContent = media;
+               x++;
+           }
+
+           function pegaNota(td){
+               return parseFloat(td.textContent);
+           }
+
+       })()
+   </script>
+</body>
+</html>

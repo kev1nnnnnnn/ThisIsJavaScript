@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <script src="beluga.js"></script>
+
+    <style>
+        body {
+            background-color: #f9f9;
+        }
+        h1 {
+            text-align: center;
+            color:white;
+            margin-top: 100px;         
+        }
+     
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript</h1>
+        <button id="btn1" onclick="clicar()">Botao 1</button>
+        <button id="btn2">Botao 2</button>
+        <button id="btn3" onclick="alert('mundo');">Botao 3 </button>
+    
+    </div>
+
+    <div class="container">
+        <h1>Propagação de eventos</h1>
+
+        <div id="d1" style="background: red; padding: 25px;">
+            <span style="background: yellow;">texto dentro da span</span>
+        </div>
+    </div>
+
+    <!--h1{delegação de eventos}+ul>li{listas $}*3-->
+
+    <div class="container">
+        <h1>delegação de eventos</h1>
+        <ul>
+            <li>listas 1</li>
+            <li>listas 2</li>
+            <li>listas 3</li>
+        </ul>
+    </div>
+    
+    <script>
+    //DOM NIVEL 0
+        var btn2 = document.getElementById('btn2');
+        var btn3 = document.getElementById('btn3');
+
+        btn2.onclick = clicar;
+
+        function clicar(){
+            alert('clicou');
+
+            return function() {
+                alert('Clicou 2');
+            }
+        }
+        //DOM NIVEL 2
+        btn3.addEventListener("click", function() {
+            alert('clico com dom level 2');
+        })
+        btn3.addEventListener("click", function() {
+            alert('clico com dom level 2 com outro evento');
+        });
+
+        btn3.onclick = function () {
+            alert('olá');
+        }
+        btn3.onclick = function() {
+            alert('mundo');
+        }
+
+        var $d1 = document.querySelector('#d1');
+        var $d1Span = document.querySelector('#d1 span');  
+        
+        $d1.addEventListener('click',function(){
+            console.log('click no $d1');
+            e.stopPropagation();
+        }, false);
+        $d1Span.addEventListener('click',function(){
+            console.log('click no $d1Span')
+        }, false);
+
+        document.addEventListener('click',function(evt){
+            console.log('clicou no document');
+            console.log(evt.currentTarget);
+            console.log(evt.target);
+            console.log(this);
+        }, false);
+
+        var $ul = document.querySelector('ul');
+        var $lis = document.querySelectorAll('li')
+
+        $lis[0].addEventListener('click', function(e){
+            e.stopPropagation();
+            console.log('Clicou na li');
+        }); 
+
+       /* var x = 0;
+        while($lis[x]) {
+            $lis[x].addEventListener('click', function(e){
+                e.stopPropagation();
+                console.log('Clicou na li');
+            })
+            x++;
+        }*/
+
+        $ul.addEventListener('click', function(e){
+            e.stopPropagation();
+            console.log(this);
+            console.log(e.target);
+            console.log(e.currentTarget);
+            
+            console.log(e.target.nodeName)
+            if(e.target.nodeName === "LI") {
+                alert('Clickou na li')
+            }
+        })
+
+    </script>
+</body>
+</html>

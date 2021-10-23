@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <script src="beluga.js"></script>
+
+    <style>
+        body {
+            background-color: #f9f9;
+        }
+        h1 {
+            text-align: center;
+            color:white;
+            margin-top: 300px;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript</h1>
+
+    <script>
+        var Caneta = (function(window) {
+            'use strict';
+            console.log(this);
+            function caneta(preco, cor) {
+            
+    
+            //privado 
+            var color =  cor || 'black';
+
+            //publicas
+            this.preco = preco  || 1;
+            this.mudarCor = function(cor) {
+                if(cor !== 'red' && cor !== 'blue' && cor !== 'black') {
+                    return;
+                }
+                color = cor;
+            }
+            this.pegaCor = function(){
+                return color;
+            }
+        }
+        return caneta;
+
+    })(window)
+        
+    </script>
+</body>
+</html>

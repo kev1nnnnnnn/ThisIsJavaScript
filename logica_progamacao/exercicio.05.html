@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    
+    <script>
+        var nJogador1 = parseInt(prompt("Número do 1º Jogador: "));
+        var nJogador2 = parseInt(prompt("Número do 2º Jogador: "));
+
+        if(nJogador1 === nJogador2) {
+            alert("Vocês empataram")
+        }else{
+            var nSorteado = parseInt(Math.random() * 2);
+            alert("nSorteado:" + nSorteado)
+
+            if(nSorteado === 0 && nJogador1 < nJogador2 ||nSorteado === 1 && nJogador1 > nJogador2){
+                alert("Ganhou o jogador 1");
+            }else {
+                alert("Ganhou o jogador 2")
+            }
+        }
+    </script>
+</body>
+</html>

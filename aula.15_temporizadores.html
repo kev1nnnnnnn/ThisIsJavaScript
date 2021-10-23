@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+</head>
+<body>
+
+    <h1>JavaScript Temporizadores</h1>
+
+    <div></div>
+
+    <script>
+        
+        var n = 0;
+        function somaUm(){
+            console.log('n', ++n);
+
+            if (n > 10) {
+                clearInterval(intervalo);
+            }
+        }
+
+        var timeOut =  setTimeout(somaUm, 1000);
+        alert(timeOut)
+
+        var intervalo = setInterval(somaUm, 1000);
+        console.log(intervalo)
+
+        var str = '';
+        var d = document.querySelector('div');
+        var timeOut = setTimeout(function(){
+
+           for (var i = 0; i < 100000;  i++){
+               str += 'i: ' + i + "--";
+               d.textContent += str;
+           } 
+
+        }, 3000)
+
+    </script>
+</body>
+</html>

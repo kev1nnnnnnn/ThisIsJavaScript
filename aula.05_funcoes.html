@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        //Literal
+        function somar(n1, n2) {
+            //Corpor da função
+            return n1 + n2;
+        }
+
+        var soma = somar(10, 20);
+        console.log('resultado: ', soma);
+
+        somar.teste = 'Propriedade da função';
+
+        console.log(somar.teste);
+
+        var teste = function(str) {
+            console.log('teste', str);
+        }
+        teste('ola');
+ //============================================
+        var teste = function abacaxi(f) {
+            f();
+        };
+        teste(function() {
+            console.log('Funcao passada por parametro');
+        });
+
+        console.log('===================')
+
+        var x = 0;
+        var y
+
+        function mostraX(){
+            var x = 10; //escopo local
+            console.log("Mostrar X dentro: ", x);
+            console.log("Mostrar y dentro: ", y);
+        }
+        mostraX();
+        console.log("Mostrar x: fora ", x);
+        console.log("Mostrar y: fora ", y);
+
+
+        //IFEE
+        (function(){
+            'use strict';
+            var isValid = false;
+            console.log(isValid);
+
+            function somar() {   
+                console.log(arguments);
+                var result = 0;
+                var x = 0;
+
+                while(arguments[x]) {
+                    result += arguments[x];
+                    x++;
+                }
+                console.log('result: ', result);
+            }
+
+            somar(20, 20);
+        })();
+
+       
+
+        
+
+    </script>
+</head>
+<body>
+    <h1>JavaScript</h1>
+
+</body>
+</html>

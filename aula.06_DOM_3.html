@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+   <body>
+       <h1>JAVASCRIPT</h1>
+        
+       <input type="text" id="txtNome"><button onclick="escreve()">Clicar</button>
+       <div id="msg"> </div>
+
+    <script>
+
+        txtNome2 = document.querySelector('#txtNome');
+
+        function escreve() {
+            var nome = txtNome2.value;
+            document.querySelector('#msg').innerHTML = 
+            "Bem vindo , <b>" + nome + "</b>";
+        }
+       
+
+    </script>
+
+   </body>
+</body>
+</html>
+
+
+<!--textContent = Inserir texto no DOM e reflete na visu da pag
+DOM = Document.query
+FUNCTION = LITERAL
+.innerHTML = Para interpretar a pagina html-->

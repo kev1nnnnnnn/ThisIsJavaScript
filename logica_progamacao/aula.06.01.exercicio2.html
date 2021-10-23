@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <div id="#output"></div>
+
+    <script>
+        var arr = new Array(25, 30, 45, 28, 0, 12, 78, 64);
+
+        somaOsPares(arr);
+
+        function somaOsPares(arr) {
+            var soma = 0;
+            for(var i = 0; i < arr.length; i++) {
+            console.log(i);
+            console(arr[i]);
+
+                if(isNaN(arr[i]) && arr[i] % 2 === 0){
+                    soma += arr[i];
+           
+                }
+            }
+        alert('A soma dos numeros pares é: ' + soma);
+        }
+    </script>
+</body>
+</html>

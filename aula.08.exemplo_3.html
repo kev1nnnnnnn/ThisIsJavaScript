@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <script src="beluga.js"></script>
+
+    <style>
+        body {
+            background-color: #f9f9;
+        }
+        h1 {
+            text-align: center;
+            color:white;
+            margin-top: 50px;         
+        }
+     
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Form</h1>
+
+        <textarea name="" id="msg" cols="50" rows="6" maxlength="100">   
+        </textarea>
+
+        <div id="restaContainer" style="display: none;">
+            Restam <span id="resta"></span> caracteres
+        </div>
+       
+        
+    </div>
+
+
+   <script>
+        (function(){
+           'use strict';
+        
+            var $txtMsg = document.getElementById('msg');
+            var $restaContainer = document.getElementById('restaContainer');
+            var $resta = document.getElementById('resta');
+            var maxima = $txtMsg.maxLength;
+
+            function mostrarContainerResta() {
+                $restaContainer.style.display = 'block';
+            }
+
+            mostrarContainerResta()
+            mostrarCaracteresRestantes(maxima);
+            $txtMsg.addEventListener('input', checkLength);
+    
+            function checkLength(e) {
+
+                var numeroLetrasDigitadas = this.value.length; 
+                var caracteresRestantes = parseInt(maxima) - parseInt(numeroLetrasDigitadas)                             
+                mostrarCaracteresRestantes(caracteresRestantes);
+            }
+
+            function mostrarCaracteresRestantes(n) {
+                $resta.textContent = n;
+            }
+         })();
+   </script>
+
+</body>
+</html>
