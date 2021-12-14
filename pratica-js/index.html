@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/index.js"></script>
+    <title>JS</title>
+</head>
+<body>
+    
+
+<h1>E la vamos nós!!</h1>
+   
+  <script>
+
+ function Hora() {
+
+  let data = new Date();
+
+  return data.toLocaleTimeString('pt-br', {
+    hour12: false
+  });
+ }
+
+ function intervalo() {
+
+  console.log(Hora());
+ }
+
+ const time = setInterval(function() {
+   console.log(Hora());
+ }, 1000);
+
+ setTimeout(function () {
+
+  clearInterval(time);
+
+ }, 3000);
+
+setTimeout(function() {
+  console.log("Matheus é gay!");
+}, 5000);
+   
+  </script>
+
+</body>
+</html>
