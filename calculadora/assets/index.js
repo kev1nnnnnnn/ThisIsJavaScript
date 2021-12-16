@@ -7,6 +7,15 @@ function criaCalculadora() {
         //inicia: function() {
         inicia() {
             this.cliqueBotoes();
+            this.pressionaEnter();
+        },
+
+        pressionaEnter() {
+           this.display.addEventListener('keyup', e => {
+                if(e.keyCode == 13) { //enter
+                    this.realizaConta();
+                }
+           });
         },
         
         realizaConta() {
