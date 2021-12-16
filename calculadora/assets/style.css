@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+.calculadora {
+    width: 350px;
+}
+.display {
+    width: 100%;
+    font-size: 2em;
+    text-align: right;
+    border: 1px solid #191970;
+}
+.btn {
+    width: 100%;
+    height: 25px;
+    font-size: 1em;
+    border: none;
+    background: #191970;
+    color: #fff;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #1C1C1C;
+}
+.btn-eq {
+    background: brown;
+}
