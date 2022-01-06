@@ -1,9 +1,0 @@
- npm install --save-dev @babel/cli @babel/preset-env @babel/core
- 
- ####### rodar o babel via npm #######
- npx babel main.js -o bundle.js --presets=@babel/env
-
-####### rodar o babel via json #######
-"scripts": {
-    "babel": "babel ./main.js -o ./bundle.js --presets=@babel/preset-env -w"
-  },
